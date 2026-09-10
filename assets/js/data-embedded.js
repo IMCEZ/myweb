@@ -216,7 +216,7 @@ window.IDR_EMBEDDED = {
   "quotes": {
     "_readme": "每日一语。每条为 { text: 语录正文, source: 出处 }。收录范围为日漫 / 国漫 / 国内小说（古典 + 网络）。均为公开流传的作品原文或通行译文，不含无法核实的网传伪语录。增删后请运行 node tools/build-embedded.mjs 重新生成内嵌副本。",
     "version": 1,
-    "updatedAt": "2026-09-10T15:14:44.544Z",
+    "updatedAt": "2026-09-10T15:16:34.499Z",
     "disclaimer": "语录来自各作品原文或通行译文，仅作分享交流，版权归原作者所有。",
     "quotes": [
       {
@@ -1678,6 +1678,10 @@ window.IDR_EMBEDDED = {
       {
         "text": "当它成长到一定规模的时候，便会开始崩塌。",
         "source": "十日终焉"
+      },
+      {
+        "text": "前方大夏，神明禁行。",
+        "source": "斩神"
       }
     ]
   },
