@@ -64,12 +64,18 @@
   "contact": {
     "title": "联系我",
     "subtitle": "有项目想聊、有问题想问，或者只是想打个招呼，都可以找我。",
-    "email": "hello@example.com",
+    "email": "r2416525901@gmail.com",
     "location": "中国",
-    "socials": []
+    "socials": [
+      {
+        "type": "github",
+        "label": "GitHub",
+        "url": "https://github.com/IMCEZ"
+      }
+    ]
   },
   "footer": {
-    "copyright": "© 2025 Ide-Chen (IDR). All rights reserved.",
+    "copyright": "© 2026 Ide-Chen (IDR). All rights reserved.",
     "note": "Made with plain HTML, CSS and JavaScript.",
     "repoUrl": "https://github.com/IMCEZ"
   },
