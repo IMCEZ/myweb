@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>全部作品 · Ide-Chen (IDR)</title>
+  <meta name="description" content="Ide-Chen（IDR）的全部作品：Web 应用、工具脚本、开源项目与实验性作品。">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <script src="assets/js/theme-init.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到主要内容</a>
+
+  <header data-idr-nav></header>
+
+  <main id="main">
+    <div class="container">
+      <div class="page-head">
+        <nav class="breadcrumb" aria-label="面包屑">
+          <a href="index.html">首页</a><span aria-hidden="true">/</span><span>作品</span>
+        </nav>
+        <div class="section-kicker">PORTFOLIO</div>
+        <h1 class="page-head__title">全部作品</h1>
+        <p class="page-head__subtitle" data-projects-subtitle>
+          这里放的是我做过的项目，从完整的产品到随手写的小工具都有。点开卡片可以看到每个项目的来龙去脉。
+        </p>
+      </div>
+
+      <div class="toolbar">
+        <label class="search">
+          <span class="sr-only">搜索作品</span>
+          <span data-search-icon></span>
+          <input type="search" id="workSearch" placeholder="搜索标题、标签或内容…" autocomplete="off">
+        </label>
+        <div class="filters" data-filters role="group" aria-label="按分类筛选"></div>
+        <div class="result-count" data-result-count></div>
+      </div>
+
+      <div class="grid" id="worksGrid" data-works>
+        <div class="loading" style="grid-column:1/-1"><div class="spinner"></div>正在加载作品…</div>
+      </div>
+
+      <div id="worksEmpty" hidden></div>
+    </div>
+  </main>
+
+  <footer data-idr-footer></footer>
+
+  <script src="assets/js/markdown.js" defer></script>
+  <script src="assets/js/store.js" defer></script>
+  <script src="assets/js/ui.js" defer></script>
+  <script src="assets/js/page-projects.js" defer></script>
+  <script src="assets/js/boot.js" defer></script>
+</body>
+</html>

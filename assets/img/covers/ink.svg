@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480" width="800" height="480" role="img" aria-label="ink-cli 脚手架封面">
+  <defs>
+    <linearGradient id="ink-bg" x1="0" y1="0" x2="800" y2="480" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0f172a"/>
+      <stop offset="1" stop-color="#1e3a8a"/>
+    </linearGradient>
+    <linearGradient id="ink-sheen" x1="0" y1="0" x2="800" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0ea5e9" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#38bdf8" stop-opacity="0.5"/>
+      <stop offset="1" stop-color="#0ea5e9" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="480" fill="url(#ink-bg)"/>
+  <g font-family="'SFMono-Regular', Consolas, 'Courier New', monospace" font-size="19" fill="#7dd3fc" opacity="0.5">
+    <text x="60" y="120">$ npx ink-cli create my-app</text>
+    <text x="60" y="156" fill="#38bdf8" opacity="0.7">? 选择框架 › React</text>
+    <text x="60" y="192" fill="#38bdf8" opacity="0.55">? 使用 TypeScript › 是</text>
+    <text x="60" y="228" fill="#38bdf8" opacity="0.4">? 包管理器 › pnpm</text>
+    <text x="60" y="264" fill="#7dd3fc" opacity="0.3">✔ 项目已创建 · 12 个文件</text>
+  </g>
+  <rect x="48" y="88" width="4" height="200" rx="2" fill="url(#ink-sheen)"/>
+  <g fill="#e0f2fe" opacity="0.85">
+    <rect x="560" y="96" width="180" height="8" rx="4" opacity="0.5"/>
+    <rect x="560" y="120" width="120" height="8" rx="4" opacity="0.3"/>
+    <rect x="560" y="144" width="150" height="8" rx="4" opacity="0.22"/>
+  </g>
+  <text x="56" y="392" fill="#f0f9ff" font-family="-apple-system, 'Segoe UI', 'Microsoft YaHei', sans-serif" font-size="42" font-weight="700" letter-spacing="1">ink-cli 脚手架</text>
+  <text x="58" y="426" fill="#7dd3fc" font-family="-apple-system, 'Segoe UI', 'Microsoft YaHei', sans-serif" font-size="17" font-weight="500" letter-spacing="3.4">COMMAND LINE TOOL</text>
+</svg>

@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480" width="800" height="480" role="img" aria-label="Tide 极简笔记封面">
+  <defs>
+    <linearGradient id="td-bg" x1="0" y1="0" x2="800" y2="480" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#f0f9ff"/>
+      <stop offset="0.6" stop-color="#e0f2fe"/>
+      <stop offset="1" stop-color="#bae6fd"/>
+    </linearGradient>
+    <linearGradient id="td-wave" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#38bdf8" stop-opacity="0.85"/>
+      <stop offset="1" stop-color="#0284c7" stop-opacity="0.35"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="480" fill="url(#td-bg)"/>
+  <path d="M-20 300 C120 240 200 350 340 300 C480 250 560 350 700 300 C760 278 800 290 820 296 V500 H-20 Z" fill="url(#td-wave)" opacity="0.5"/>
+  <path d="M-20 340 C120 284 200 392 340 342 C480 292 560 392 700 342 C760 320 800 332 820 338 V500 H-20 Z" fill="#0284c7" opacity="0.28"/>
+  <g transform="translate(72,86)" fill="none" stroke="#0ea5e9" stroke-width="3" stroke-linecap="round" opacity="0.85">
+    <rect x="0" y="0" width="180" height="240" rx="16" fill="#ffffff" fill-opacity="0.75" stroke="#7dd3fc"/>
+    <line x1="28" y1="52" x2="152" y2="52"/>
+    <line x1="28" y1="86" x2="152" y2="86"/>
+    <line x1="28" y1="120" x2="116" y2="120"/>
+    <line x1="28" y1="154" x2="140" y2="154"/>
+    <line x1="28" y1="188" x2="88" y2="188"/>
+  </g>
+  <g transform="translate(190,206)" fill="none" stroke="#0284c7" stroke-width="3" stroke-linecap="round" opacity="0.6">
+    <rect x="0" y="0" width="150" height="190" rx="14" fill="#ffffff" fill-opacity="0.7" stroke="#7dd3fc"/>
+    <line x1="24" y1="44" x2="126" y2="44"/>
+    <line x1="24" y1="74" x2="126" y2="74"/>
+    <line x1="24" y1="104" x2="96" y2="104"/>
+  </g>
+  <text x="56" y="404" fill="#082f49" font-family="-apple-system, 'Segoe UI', 'Microsoft YaHei', sans-serif" font-size="42" font-weight="700" letter-spacing="1">Tide 极简笔记</text>
+  <text x="58" y="438" fill="#0369a1" font-family="-apple-system, 'Segoe UI', 'Microsoft YaHei', sans-serif" font-size="17" font-weight="500" letter-spacing="3.4">LOCAL-FIRST MARKDOWN NOTES</text>
+</svg>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>页面走丢了 · Ide-Chen (IDR)</title>
+  <meta name="description" content="页面不存在。">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <script src="assets/js/theme-init.js"></script>
+</head>
+<body>
+  <header data-idr-nav></header>
+
+  <main id="main">
+    <div class="container">
+      <div style="padding-block:clamp(3rem, 10vw, 7rem);text-align:center;max-width:620px;margin-inline:auto">
+        <div style="width:150px;margin:0 auto var(--space-6)" data-logo></div>
+        <div style="font-size:clamp(3rem, 12vw, 5.5rem);font-weight:700;letter-spacing:-0.04em;line-height:1;color:var(--primary)">404</div>
+        <h1 style="margin-top:var(--space-5);font-size:clamp(1.3rem, 3.4vw, 1.7rem)">这个页面走丢了</h1>
+        <p style="margin-top:var(--space-4);color:var(--text-muted)">
+          地址可能写错了，或者这个页面已经被我移走了。要不回首页看看？
+        </p>
+        <div style="display:flex;gap:var(--space-3);justify-content:center;flex-wrap:wrap;margin-top:var(--space-6)">
+          <a class="btn btn--primary" href="index.html">回到首页</a>
+          <a class="btn btn--ghost" href="projects.html">浏览作品</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer data-idr-footer></footer>
+
+  <script src="assets/js/markdown.js" defer></script>
+  <script src="assets/js/store.js" defer></script>
+  <script src="assets/js/ui.js" defer></script>
+  <script src="assets/js/boot.js" defer></script>
+  <script defer>
+    window.IDR_PAGE = function (ctx) {
+      var el = document.querySelector('[data-logo]');
+      if (el) el.innerHTML = ctx.ui.logoSVG({ height: 90, title: 'IDR' });
+    };
+  </script>
+</body>
+</html>

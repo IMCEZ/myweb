@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480" width="800" height="480" role="img" aria-label="Prism 动效组件库封面">
+  <defs>
+    <linearGradient id="pr-bg" x1="0" y1="0" x2="800" y2="480" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0369a1"/>
+      <stop offset="0.5" stop-color="#0ea5e9"/>
+      <stop offset="1" stop-color="#22d3ee"/>
+    </linearGradient>
+    <linearGradient id="pr-tri" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.42"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0.06"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="480" fill="url(#pr-bg)"/>
+  <g opacity="0.9">
+    <polygon points="470,96 620,356 320,356" fill="url(#pr-tri)" stroke="#e0f2fe" stroke-opacity="0.55" stroke-width="2"/>
+    <polygon points="560,150 660,320 460,320" fill="none" stroke="#e0f2fe" stroke-opacity="0.3" stroke-width="2"/>
+    <polygon points="392,168 470,300 314,300" fill="none" stroke="#e0f2fe" stroke-opacity="0.22" stroke-width="2"/>
+  </g>
+  <g fill="none" stroke="#ffffff" stroke-opacity="0.5" stroke-width="2.5" stroke-linecap="round">
+    <path d="M60 120 C140 120 140 200 220 200"/>
+    <path d="M60 168 C120 168 120 248 180 248"/>
+  </g>
+  <g fill="#ffffff" opacity="0.75">
+    <circle cx="228" cy="200" r="5"/>
+    <circle cx="188" cy="248" r="4"/>
+  </g>
+  <text x="56" y="392" fill="#ffffff" font-family="-apple-system, 'Segoe UI', 'Microsoft YaHei', sans-serif" font-size="42" font-weight="700" letter-spacing="1">Prism 动效组件库</text>
+  <text x="58" y="426" fill="#e0f2fe" font-family="-apple-system, 'Segoe UI', 'Microsoft YaHei', sans-serif" font-size="17" font-weight="500" letter-spacing="3.4">LIGHTWEIGHT MOTION</text>
+</svg>

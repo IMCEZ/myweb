@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>关于我 · Ide-Chen (IDR)</title>
+  <meta name="description" content="关于 Ide-Chen（IDR）：一个喜欢把想法做成东西的开发者。">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <script src="assets/js/theme-init.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到主要内容</a>
+
+  <header data-idr-nav></header>
+
+  <main id="main">
+    <div class="container">
+      <div class="page-head">
+        <nav class="breadcrumb" aria-label="面包屑">
+          <a href="index.html">首页</a><span aria-hidden="true">/</span><span>关于</span>
+        </nav>
+        <div class="section-kicker">ABOUT</div>
+        <h1 class="page-head__title" data-about-title>关于我</h1>
+      </div>
+
+      <div class="detail-layout">
+        <div>
+          <p class="about-lead" data-about-lead></p>
+          <div class="prose-block" data-about-paragraphs></div>
+
+          <div style="margin-top:var(--space-8)" data-timeline-wrap hidden>
+            <div class="section-kicker">经历</div>
+            <h2 class="section-title" style="font-size:1.5rem">一路走来</h2>
+            <div class="timeline" data-timeline></div>
+          </div>
+        </div>
+
+        <aside class="sidebar">
+          <div class="sidebar__card" style="text-align:center">
+            <div style="width:96px;margin:0 auto var(--space-4)" data-about-logo></div>
+            <div style="font-weight:650;font-size:1.05rem" data-about-name></div>
+            <div style="color:var(--text-muted);font-size:14px" data-about-role></div>
+            <div class="divider" style="margin:var(--space-5) 0"></div>
+            <div class="link-stack">
+              <a class="link-item" href="projects.html" data-works-link></a>
+              <a class="link-item" href="index.html#contact" data-contact-link></a>
+            </div>
+          </div>
+
+          <div class="sidebar__card" data-facts-card hidden>
+            <div class="sidebar__title">一些小信息</div>
+            <div class="meta-list" data-facts></div>
+          </div>
+        </aside>
+      </div>
+
+      <!-- 技能 -->
+      <section class="section section--subtle" style="margin-top:var(--space-8);border-radius:var(--radius-xl)">
+        <div class="section-head" data-reveal>
+          <div class="section-head__text">
+            <div class="section-kicker">能力</div>
+            <h2 class="section-title" data-skills-title>技能与工具</h2>
+            <p class="section-subtitle" data-skills-subtitle></p>
+          </div>
+        </div>
+        <div class="skills" data-skills></div>
+      </section>
+
+      <!-- 联系 -->
+      <section class="section" style="padding-bottom:var(--space-9)">
+        <div class="contact" data-reveal>
+          <div class="section-kicker" style="justify-content:center">联系</div>
+          <h2 class="contact__title" data-contact-title>联系我</h2>
+          <p class="contact__subtitle" data-contact-subtitle></p>
+          <div class="contact__actions" data-contact-actions></div>
+          <div class="socials" data-contact-socials></div>
+          <div class="contact__meta" data-contact-meta></div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer data-idr-footer></footer>
+
+  <script src="assets/js/markdown.js" defer></script>
+  <script src="assets/js/store.js" defer></script>
+  <script src="assets/js/ui.js" defer></script>
+  <script src="assets/js/page-about.js" defer></script>
+  <script src="assets/js/boot.js" defer></script>
+</body>
+</html>

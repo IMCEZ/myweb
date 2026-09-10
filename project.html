@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>作品详情 · Ide-Chen (IDR)</title>
+  <meta name="description" content="作品详情 — Ide-Chen (IDR) 的个人作品集。">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <script src="assets/js/theme-init.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到主要内容</a>
+
+  <header data-idr-nav></header>
+
+  <main id="main">
+    <div class="container" id="detailRoot" hidden>
+      <div class="page-head" style="padding-bottom:var(--space-4)">
+        <nav class="breadcrumb" aria-label="面包屑">
+          <a href="index.html">首页</a><span aria-hidden="true">/</span>
+          <a href="projects.html">作品</a><span aria-hidden="true">/</span>
+          <span data-crumb-title></span>
+        </nav>
+      </div>
+
+      <article>
+        <!-- 封面 -->
+        <div class="detail-hero" data-cover-wrap>
+          <div class="detail-cover">
+            <img data-cover src="" alt="">
+          </div>
+        </div>
+
+        <!-- 标题区 -->
+        <header style="margin-bottom:var(--space-7)">
+          <div class="tags" data-tags style="margin-bottom:var(--space-4)"></div>
+          <h1 class="detail-title" data-title></h1>
+          <p class="detail-summary" data-summary></p>
+          <div class="detail-meta-inline" data-meta-inline></div>
+        </header>
+
+        <!-- 正文 + 侧栏 -->
+        <div class="detail-layout">
+          <div>
+            <div class="prose detail-body" data-body></div>
+
+            <div class="prevnext" data-prevnext></div>
+          </div>
+
+          <aside class="sidebar">
+            <div class="sidebar__card" data-sidebar-meta></div>
+            <div class="sidebar__card" data-sidebar-links hidden></div>
+            <div class="sidebar__card" data-sidebar-highlights hidden></div>
+            <div class="sidebar__card">
+              <div class="sidebar__title">分享</div>
+              <div class="link-stack">
+                <button class="link-item" type="button" data-copy-link style="width:100%;text-align:left">
+                  <span data-copy-icon></span><span data-copy-label>复制本页链接</span>
+                  <span class="arrow" data-copy-arrow></span>
+                </button>
+                <a class="link-item" href="projects.html" data-back-link>
+                  <span data-back-icon></span>返回全部作品
+                  <span class="arrow" data-back-arrow></span>
+                </a>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </article>
+    </div>
+
+    <!-- 未找到 -->
+    <div class="container" id="notFound" hidden>
+      <div style="padding-block:var(--space-9)">
+        <div class="empty">
+          <span data-nf-icon style="display:block;width:40px;margin:0 auto var(--space-4)"></span>
+          <h3>没有找到这个作品</h3>
+          <p>链接可能已经失效，或者这个作品已经被移除了。</p>
+          <div style="margin-top:var(--space-5)">
+            <a class="btn btn--primary" href="projects.html">看看全部作品</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer data-idr-footer></footer>
+
+  <script src="assets/js/markdown.js" defer></script>
+  <script src="assets/js/store.js" defer></script>
+  <script src="assets/js/ui.js" defer></script>
+  <script src="assets/js/page-project.js" defer></script>
+  <script src="assets/js/boot.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,7 @@
+# Vercel 部署忽略清单
+# admin.html 是「本地创作工具」，包含前台可读的口令，
+# 不应该发布到公网。本地留着用，部署时排除掉。
+admin.html
+tools/
+*.md
+.gitignore

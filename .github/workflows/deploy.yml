@@ -1,0 +1,49 @@
+# GitHub Pages 自动部署
+#
+# 本仓库是纯静态站点，没有构建步骤，所以直接「发布整个仓库根目录」即可。
+#
+# 需要做的两件事：
+#   1. 仓库 Settings → Pages → Build and deployment → Source 选择 "GitHub Actions"
+#   2. 推送到 main 分支，这个工作流就会自动发布
+#
+# 站点地址：https://<你的用户名>.github.io/<仓库名>/
+# 如果仓库名是 <用户名>.github.io，则地址是 https://<用户名>.github.io/
+
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: 检出仓库
+        uses: actions/checkout@v4
+
+      - name: 配置 Pages
+        uses: actions/configure-pages@v5
+
+      - name: 打包站点
+        uses: actions/upload-pages-artifact@v3
+        with:
+          # 纯静态站点：直接发布仓库根目录，无需任何构建
+          path: .
+
+      - name: 发布
+        id: deployment
+        uses: actions/deploy-pages@v4

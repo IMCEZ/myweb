@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 208 72" width="208" height="72" role="img" aria-labelledby="idrLogoLightTitle">
+  <title id="idrLogoLightTitle">IDR — Ide-Chen 标志（深色底）</title>
+  <defs>
+    <linearGradient id="idrSkyLight" x1="0" y1="0" x2="208" y2="72" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#7dd3fc"/>
+      <stop offset="0.55" stop-color="#38bdf8"/>
+      <stop offset="1" stop-color="#0ea5e9"/>
+    </linearGradient>
+  </defs>
+  <g fill="none" stroke="url(#idrSkyLight)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round">
+    <line x1="28" y1="24" x2="28" y2="48"/>
+    <line x1="56" y1="24" x2="56" y2="48"/>
+    <path d="M56 24 H76 C90 24 100 30.5 100 36 C100 41.5 90 48 76 48 H56"/>
+    <line x1="128" y1="24" x2="128" y2="48"/>
+    <path d="M128 24 H148 C158 24 164 27 164 32 C164 37 158 40 148 40 H128"/>
+    <line x1="146" y1="40" x2="164" y2="48"/>
+  </g>
+  <circle cx="180" cy="45" r="4.5" fill="url(#idrSkyLight)"/>
+</svg>

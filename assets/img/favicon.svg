@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-labelledby="idrFaviconTitle">
+  <title id="idrFaviconTitle">IDR</title>
+  <defs>
+    <linearGradient id="favSky" x1="4" y1="4" x2="60" y2="60" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#38bdf8"/>
+      <stop offset="1" stop-color="#0284c7"/>
+    </linearGradient>
+  </defs>
+  <rect x="0" y="0" width="64" height="64" rx="14" fill="#f0f9ff"/>
+  <g fill="none" stroke="url(#favSky)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+    <line x1="16" y1="20" x2="16" y2="44"/>
+    <path d="M27 20 H34 C45 20 52 26 52 32 C52 38 45 44 34 44 H27 Z"/>
+  </g>
+  <circle cx="45" cy="45" r="4" fill="url(#favSky)"/>
+</svg>

@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480" width="800" height="480" role="img" aria-label="Echo 声波画布封面">
+  <defs>
+    <radialGradient id="ec-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#38bdf8" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#0ea5e9" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="ec-bg" x1="0" y1="0" x2="800" y2="480" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#020617"/>
+      <stop offset="1" stop-color="#0c4a6e"/>
+    </linearGradient>
+    <pattern id="ec-dots" width="22" height="22" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1" fill="#7dd3fc" fill-opacity="0.18"/>
+    </pattern>
+  </defs>
+  <rect width="800" height="480" fill="url(#ec-bg)"/>
+  <rect width="800" height="480" fill="url(#ec-dots)"/>
+  <circle cx="520" cy="216" r="230" fill="url(#ec-glow)"/>
+  <g fill="none" stroke="#7dd3fc" stroke-linecap="round">
+    <circle cx="520" cy="216" r="52" stroke-width="2" stroke-opacity="0.9"/>
+    <circle cx="520" cy="216" r="86" stroke-width="2" stroke-opacity="0.62"/>
+    <circle cx="520" cy="216" r="122" stroke-width="2" stroke-opacity="0.42"/>
+    <circle cx="520" cy="216" r="160" stroke-width="1.5" stroke-opacity="0.26"/>
+    <circle cx="520" cy="216" r="198" stroke-width="1.5" stroke-opacity="0.14"/>
+  </g>
+  <g fill="#38bdf8">
+    <circle cx="520" cy="164" r="6"/>
+    <circle cx="572" cy="216" r="4.5"/>
+    <circle cx="520" cy="268" r="5.5"/>
+    <circle cx="468" cy="216" r="4"/>
+    <circle cx="596" cy="140" r="3.5"/>
+    <circle cx="444" cy="292" r="3"/>
+    <circle cx="620" cy="250" r="2.5"/>
+    <circle cx="420" cy="180" r="2.5"/>
+  </g>
+  <path d="M240 216 Q280 148 320 216 T400 216" fill="none" stroke="#38bdf8" stroke-width="2.5" stroke-opacity="0.55"/>
+  <path d="M224 258 Q264 200 304 258 T384 258" fill="none" stroke="#38bdf8" stroke-width="2" stroke-opacity="0.3"/>
+  <text x="56" y="392" fill="#f0f9ff" font-family="-apple-system, 'Segoe UI', 'Microsoft YaHei', sans-serif" font-size="42" font-weight="700" letter-spacing="1">Echo 声波画布</text>
+  <text x="58" y="426" fill="#7dd3fc" font-family="-apple-system, 'Segoe UI', 'Microsoft YaHei', sans-serif" font-size="17" font-weight="500" letter-spacing="3.4">WEB AUDIO EXPERIMENT</text>
+</svg>
