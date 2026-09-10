@@ -1221,6 +1221,148 @@ hr { border: 0; border-top: 1px solid var(--border); margin: var(--space-6) 0; }
 .prose th, .prose td { padding: 10px 14px; border: 1px solid var(--border); text-align: left; }
 .prose th { background: var(--bg-subtle); color: var(--text); font-weight: 600; }
 
+/* ------------------------------ 每日一语 ------------------------------ */
+.quote-card {
+  position: relative;
+  padding: clamp(1.75rem, 4vw, 2.75rem) clamp(1.5rem, 4vw, 3rem);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  background:
+    linear-gradient(150deg, var(--primary-soft), transparent 58%),
+    var(--surface);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  transition: opacity var(--dur) var(--ease), transform var(--dur) var(--ease);
+}
+.quote-card[hidden] { display: none; }
+
+/* 内容换句时的轻微淡出 */
+.quote-card.is-swapping { opacity: 0.35; transform: translateY(2px); }
+
+/* 右上角巨大的引号水印 */
+.quote-card__mark {
+  position: absolute;
+  top: -1.6rem;
+  right: 1rem;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(7rem, 16vw, 11rem);
+  line-height: 1;
+  color: var(--primary);
+  opacity: 0.10;
+  pointer-events: none;
+  user-select: none;
+}
+[data-theme="dark"] .quote-card__mark { opacity: 0.16; }
+
+.quote-card__head {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
+  position: relative;
+  z-index: 1;
+}
+.quote-card__label {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: 12px;
+  font-weight: 650;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--primary);
+}
+.quote-card__label::before {
+  content: "";
+  width: 18px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--primary);
+}
+.quote-card__count {
+  font-size: 12.5px;
+  color: var(--text-faint);
+  font-variant-numeric: tabular-nums;
+}
+
+.quote-card__body { margin: 0; position: relative; z-index: 1; }
+
+.quote-card__text {
+  font-size: clamp(1.15rem, 2.7vw, 1.6rem);
+  line-height: 1.85;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  color: var(--text);
+  max-width: 46em;
+  /* 中文语录用衬线体更有「文字感」，西文回退到无衬线 */
+  font-family: Georgia, "Songti SC", "Source Han Serif SC", "Noto Serif SC",
+               "STSong", "SimSun", var(--font-sans);
+}
+
+.quote-card__source {
+  margin-top: var(--space-4);
+  font-size: 14.5px;
+  color: var(--text-muted);
+  letter-spacing: 0.02em;
+}
+.quote-card__source::before {
+  content: "—— ";
+  color: var(--primary);
+  opacity: 0.7;
+}
+
+.quote-card__refresh {
+  position: absolute;
+  right: clamp(1rem, 3vw, 1.75rem);
+  bottom: clamp(1rem, 3vw, 1.5rem);
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 8px 15px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-full);
+  background: var(--surface);
+  color: var(--text-muted);
+  font-size: 13px;
+  font-weight: 500;
+  transition: all var(--dur-fast) var(--ease);
+}
+.quote-card__refresh:hover {
+  color: var(--primary);
+  border-color: var(--primary-border);
+  background: var(--primary-soft);
+  transform: translateY(-1px);
+}
+.quote-card__refresh-icon {
+  display: inline-grid;
+  place-items: center;
+  width: 14px;
+  height: 14px;
+}
+.quote-card__refresh-icon svg { width: 14px; height: 14px; }
+.quote-card__refresh.is-spin .quote-card__refresh-icon {
+  animation: quote-spin 480ms var(--ease-out);
+}
+@keyframes quote-spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+@media (max-width: 620px) {
+  /* 窄屏把按钮从绝对定位改为跟随内容，避免压住语录文字 */
+  .quote-card__refresh {
+    position: static;
+    margin-top: var(--space-5);
+  }
+  .quote-card__mark { top: -1rem; right: 0.5rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .quote-card.is-swapping { opacity: 1; transform: none; }
+  .quote-card__refresh.is-spin .quote-card__refresh-icon { animation: none; }
+}
+
 /* ------------------------------ 通用小组件 ------------------------------ */
 .notice {
   display: flex;

@@ -32,6 +32,29 @@
       </div>
     </section>
 
+    <!-- ============================ 每日一语 ============================ -->
+    <section class="section section--tight" id="daily" style="padding-top:0">
+      <div class="container">
+        <div class="quote-card" data-daily-quote hidden>
+          <span class="quote-card__mark" aria-hidden="true">”</span>
+          <div class="quote-card__head">
+            <span class="quote-card__label">每日一语</span>
+            <span class="quote-card__count" data-quote-count></span>
+          </div>
+          <blockquote class="quote-card__body">
+            <p class="quote-card__text" data-quote-text></p>
+            <footer class="quote-card__source" data-quote-source></footer>
+            <!-- 完整格式（语录---《出处》）供复制与无障碍读取 -->
+            <span class="sr-only" data-quote-full></span>
+          </blockquote>
+          <button class="quote-card__refresh" type="button" data-quote-refresh title="换一句">
+            <span class="quote-card__refresh-icon" data-quote-icon></span>
+            换一句
+          </button>
+        </div>
+      </div>
+    </section>
+
     <!-- ============================ 精选作品 ============================ -->
     <section class="section" id="works" style="padding-top:0">
       <div class="container">
@@ -94,6 +117,7 @@
   <script src="assets/js/markdown.js" defer></script>
   <script src="assets/js/store.js" defer></script>
   <script src="assets/js/ui.js" defer></script>
+  <script src="assets/js/quote-card.js" defer></script>
   <script src="assets/js/page-home.js" defer></script>
   <script src="assets/js/boot.js" defer></script>
 </body>

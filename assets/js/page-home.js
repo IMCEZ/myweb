@@ -248,6 +248,14 @@
       if (!bits.length) metaEl.style.display = 'none';
     }
 
+    /* ------------------------------ 每日一语 ------------------------------ */
+    var quoteEl = document.querySelector('[data-daily-quote]');
+    if (quoteEl) {
+      var qIcon = quoteEl.querySelector('[data-quote-icon]');
+      if (qIcon) qIcon.innerHTML = ui.ICON.refresh;
+      if (window.IDR.quoteCard) window.IDR.quoteCard.mount(quoteEl, store);
+    }
+
     /* ------------------------------ 入场动画 ------------------------------ */
     animateTitle(titleEl, 140);
     ui.initReveal();

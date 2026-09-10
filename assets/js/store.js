@@ -10,6 +10,7 @@
   const PATHS = {
     site: 'assets/data/site.json',
     data: 'assets/data/data.json',
+    quotes: 'assets/data/quotes.json',
     embedded: 'assets/js/data-embedded.js'
   };
 
@@ -18,6 +19,7 @@
 
   let _site = null;
   let _data = null;
+  let _quotes = null;
   let _source = 'unknown'; // 'json' | 'embedded' | 'cache' | 'default'
   let _ready = null;
 
@@ -41,6 +43,15 @@
   };
 
   const FALLBACK_DATA = { version: 1, categories: [], projects: [] };
+
+  /* 极简兜底语录：仅在 quotes.json 与内嵌数据都读不到时使用 */
+  const FALLBACK_QUOTES = {
+    version: 1,
+    quotes: [
+      { text: '千里之行，始于足下。', source: '道德经' },
+      { text: '路漫漫其修远兮，吾将上下而求索。', source: '离骚' }
+    ]
+  };
 
   /* ---------------------------- 深拷贝小工具 ---------------------------- */
   function clone(value) {
@@ -81,12 +92,13 @@
     // 1) 优先尝试真正的 JSON 文件（http/https 或支持 file:// fetch 的浏览器）
     if (PROTO !== 'file:') {
       try {
-        const pair = await Promise.all([fetchJSON(PATHS.site), fetchJSON(PATHS.data)]);
-        _site = pair[0];
-        _data = pair[1];
+        const trio = await Promise.all([fetchJSON(PATHS.site), fetchJSON(PATHS.data), fetchJSON(PATHS.quotes)]);
+        _site = trio[0];
+        _data = trio[1];
+        _quotes = trio[2];
         _source = 'json';
         cacheToLocal();
-        return { site: _site, data: _data, source: _source };
+        return { site: _site, data: _data, quotes: _quotes, source: _source };
       } catch (err) {
         console.warn('[IDR.store] 读取 JSON 失败，回退到内嵌数据：', err.message);
       }
@@ -99,9 +111,10 @@
       if (payload) {
         _site = payload.site || clone(FALLBACK_SITE);
         _data = payload.data || clone(FALLBACK_DATA);
+        _quotes = payload.quotes || clone(FALLBACK_QUOTES);
         _source = 'embedded';
         cacheToLocal();
-        return { site: _site, data: _data, source: _source };
+        return { site: _site, data: _data, quotes: _quotes, source: _source };
       }
     } catch (err) {
       console.warn('[IDR.store] 内嵌数据不可用：', err.message);
@@ -112,15 +125,17 @@
     if (cached) {
       _site = cached.site;
       _data = cached.data;
+      _quotes = cached.quotes || clone(FALLBACK_QUOTES);
       _source = 'cache';
-      return { site: _site, data: _data, source: _source };
+      return { site: _site, data: _data, quotes: _quotes, source: _source };
     }
 
     // 4) 最后兜底
     _site = clone(FALLBACK_SITE);
     _data = clone(FALLBACK_DATA);
+    _quotes = clone(FALLBACK_QUOTES);
     _source = 'default';
-    return { site: _site, data: _data, source: _source };
+    return { site: _site, data: _data, quotes: _quotes, source: _source };
   }
 
   function cacheToLocal() {
@@ -128,7 +143,8 @@
       localStorage.setItem(CACHE_KEY, JSON.stringify({
         at: Date.now(),
         site: _site,
-        data: _data
+        data: _data,
+        quotes: _quotes
       }));
     } catch (e) { /* 容量超限时忽略 */ }
   }
@@ -139,6 +155,7 @@
       if (!raw) return null;
       const parsed = JSON.parse(raw);
       if (!parsed || !parsed.site || !parsed.data) return null;
+      if (!parsed.quotes) parsed.quotes = null;   // 兼容旧缓存
       return parsed;
     } catch (e) { return null; }
   }
@@ -223,6 +240,32 @@
   function raw() { return _data || clone(FALLBACK_DATA); }
   function source() { return _source; }
 
+  /* ---------------------------- 每日一语 ---------------------------- */
+  function quotes() {
+    const list = (_quotes && Array.isArray(_quotes.quotes)) ? _quotes.quotes : FALLBACK_QUOTES.quotes;
+    return list.filter(function (q) { return q && q.text && q.source; });
+  }
+
+  /* 随机取一条；avoid 用于避免连续两次抽到同一条 */
+  function randomQuote(avoid) {
+    const list = quotes();
+    if (!list.length) return null;
+    if (list.length === 1) return list[0];
+    let pick = null;
+    for (let i = 0; i < 8; i++) {
+      pick = list[Math.floor(Math.random() * list.length)];
+      if (!avoid || pick.text !== avoid.text) break;
+    }
+    return pick || list[0];
+  }
+
+  function quotesMeta() {
+    return {
+      count: quotes().length,
+      disclaimer: (_quotes && _quotes.disclaimer) || ''
+    };
+  }
+
   async function ready() {
     if (!_ready) _ready = load();
     return _ready;
@@ -241,6 +284,9 @@
     categories: categories,
     tags: tags,
     search: search,
+    quotes: quotes,
+    randomQuote: randomQuote,
+    quotesMeta: quotesMeta,
     source: source,
     clearCache: clearCache,
     paths: PATHS

@@ -19,6 +19,7 @@ const root = resolve(here, '..');
 
 const sitePath = resolve(root, 'assets/data/site.json');
 const dataPath = resolve(root, 'assets/data/data.json');
+const quotesPath = resolve(root, 'assets/data/quotes.json');
 const outPath = resolve(root, 'assets/js/data-embedded.js');
 
 /** 把任意字符串安全地序列化为可嵌入 <script> 的 JS 字面量 */
@@ -29,17 +30,20 @@ function toJS(value) {
     .replace(/\u2029/g, '\\u2029');
 }
 
-const [siteRaw, dataRaw] = await Promise.all([
+const [siteRaw, dataRaw, quotesRaw] = await Promise.all([
   readFile(sitePath, 'utf8'),
-  readFile(dataPath, 'utf8')
+  readFile(dataPath, 'utf8'),
+  readFile(quotesPath, 'utf8').catch(() => null)   // 语录文件可能还没建
 ]);
 
 const site = JSON.parse(siteRaw);
 const data = JSON.parse(dataRaw);
+const quotes = quotesRaw ? JSON.parse(quotesRaw) : null;
 
 const payload = {
   site,
   data,
+  ...(quotes ? { quotes } : {}),
   generatedAt: data.updatedAt || new Date().toISOString()
 };
 
@@ -53,7 +57,9 @@ window.IDR_EMBEDDED = ${toJS(payload)};
 await writeFile(outPath, out, 'utf8');
 
 const projectCount = Array.isArray(data.projects) ? data.projects.length : 0;
+const quoteCount = quotes && Array.isArray(quotes.quotes) ? quotes.quotes.length : 0;
 console.log('✔ 已生成 assets/js/data-embedded.js');
 console.log('  · 作品数量：' + projectCount);
+console.log('  · 每日一语：' + quoteCount + ' 条');
 console.log('  · 数据时间：' + payload.generatedAt);
 console.log('  · 文件大小：' + (Buffer.byteLength(out, 'utf8') / 1024).toFixed(1) + ' KB');
