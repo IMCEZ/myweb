@@ -134,8 +134,9 @@ window.IDR_EMBEDDED = {
   "data": {
     "_readme": "作品数据。推荐用 admin.html 可视化编辑后一键保存，不用手写这个文件。",
     "version": 1,
-    "updatedAt": "2026-09-10T13:20:00.000Z",
+    "updatedAt": "2026-09-12T00:00:00.000Z",
     "categories": [
+      "游戏",
       "移动应用",
       "开源项目",
       "Web 应用",
@@ -144,6 +145,27 @@ window.IDR_EMBEDDED = {
       "实验性作品"
     ],
     "projects": [
+      {
+        "id": "p1",
+        "slug": "year-galgame",
+        "title": "岁月 Y.E.A.R",
+        "summary": "一款正在开发中的 galgame。未完待续，敬请期待。",
+        "cover": "assets/img/covers/year.svg",
+        "tags": [
+          "游戏",
+          "galgame",
+          "开发中"
+        ],
+        "category": "游戏",
+        "featured": false,
+        "date": "2026-09-12",
+        "status": "正在开发",
+        "role": "",
+        "duration": "",
+        "links": [],
+        "content": "## 未完待续\n\n这是一款正在开发中的 galgame。\n\n还没有能拿出来的东西，先占个位置。\n\n**敬请期待。**",
+        "highlights": []
+      },
       {
         "id": "p0",
         "slug": "meshchat",
@@ -185,5 +207,5 @@ window.IDR_EMBEDDED = {
       }
     ]
   },
-  "generatedAt": "2026-09-10T13:20:00.000Z"
+  "generatedAt": "2026-09-12T00:00:00.000Z"
 };

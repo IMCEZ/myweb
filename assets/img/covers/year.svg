@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480" width="800" height="480" role="img" aria-label="岁月 Y.E.A.R 封面">
+  <defs>
+    <linearGradient id="yr-sky" x1="0" y1="0" x2="0" y2="480" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fef3c7"/>
+      <stop offset="0.38" stop-color="#fde8c8"/>
+      <stop offset="0.72" stop-color="#f4c9a8"/>
+      <stop offset="1" stop-color="#d9a184"/>
+    </linearGradient>
+    <radialGradient id="yr-sun" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#fff7ed" stop-opacity="0.95"/>
+      <stop offset="0.45" stop-color="#fdba74" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#fb923c" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="yr-water" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#e8b48f" stop-opacity="0.85"/>
+      <stop offset="1" stop-color="#b87f63" stop-opacity="0.95"/>
+    </linearGradient>
+    <linearGradient id="yr-hill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#7c6a72" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#4b3f4a" stop-opacity="0.75"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="480" fill="url(#yr-sky)"/>
+
+  <!-- 夕阳 -->
+  <circle cx="252" cy="286" r="150" fill="url(#yr-sun)"/>
+  <circle cx="252" cy="286" r="54" fill="#fff1e0" opacity="0.92"/>
+
+  <!-- 云带 -->
+  <g fill="#ffffff" opacity="0.34">
+    <ellipse cx="196" cy="150" rx="118" ry="15"/>
+    <ellipse cx="286" cy="182" rx="80" ry="11"/>
+    <ellipse cx="610" cy="118" rx="132" ry="14"/>
+    <ellipse cx="540" cy="152" rx="72" ry="10"/>
+  </g>
+
+  <!-- 飞鸟 -->
+  <g fill="none" stroke="#5b4a4a" stroke-width="2" stroke-linecap="round" opacity="0.5">
+    <path d="M596 214 q9 -8 18 0 q9 -8 18 0"/>
+    <path d="M650 244 q7 -6 14 0 q7 -6 14 0"/>
+    <path d="M556 256 q6 -5 12 0 q6 -5 12 0"/>
+  </g>
+
+  <!-- 远山 -->
+  <path d="M0 380 L118 316 L206 356 L318 294 L430 362 L520 328 L624 372 L724 332 L800 366 V480 H0 Z"
+        fill="url(#yr-hill)"/>
+  <!-- 水面 -->
+  <path d="M0 404 H800 V480 H0 Z" fill="url(#yr-water)"/>
+  <g stroke="#fff3e4" stroke-opacity="0.38" stroke-width="2" stroke-linecap="round">
+    <path d="M120 428 H262"/>
+    <path d="M330 446 H474"/>
+    <path d="M540 424 H664"/>
+    <path d="M212 466 H380"/>
+    <path d="M470 470 H590"/>
+  </g>
+  <!-- 夕阳在水面的倒影 -->
+  <g fill="#ffe9d2" opacity="0.5">
+    <rect x="228" y="412" width="48" height="4" rx="2"/>
+    <rect x="216" y="428" width="72" height="4" rx="2"/>
+    <rect x="236" y="444" width="40" height="4" rx="2"/>
+    <rect x="222" y="460" width="64" height="4" rx="2"/>
+  </g>
+
+  <!-- 标题 -->
+  <text x="444" y="392" fill="#43333a" font-family="-apple-system, 'Segoe UI', 'Microsoft YaHei', sans-serif"
+        font-size="62" font-weight="700" letter-spacing="6">岁月</text>
+  <text x="446" y="432" fill="#8a6a5e" font-family="-apple-system, 'Segoe UI', sans-serif"
+        font-size="25" font-weight="600" letter-spacing="9">Y.E.A.R</text>
+  <text x="640" y="432" fill="#a5816f" font-family="-apple-system, 'Segoe UI', 'Microsoft YaHei', sans-serif"
+        font-size="15" font-weight="500" letter-spacing="3.5">未完待续</text>
+
+  <!-- 左上角角标 -->
+  <g transform="translate(56,56)">
+    <rect x="0" y="0" width="46" height="46" rx="13" fill="#ffffff" fill-opacity="0.62" stroke="#c98f6d" stroke-opacity="0.5"/>
+    <path d="M14 15 V31 M22 15 H27 C34 15 37 19 37 23 C37 27 34 31 27 31 H22 Z"
+          fill="none" stroke="#a8624a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>
