@@ -157,7 +157,7 @@ window.IDR_EMBEDDED = {
           "开发中"
         ],
         "category": "游戏",
-        "featured": false,
+        "featured": true,
         "date": "2026-09-12",
         "status": "正在开发",
         "role": "",
