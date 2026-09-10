@@ -4,10 +4,9 @@
 #
 # 需要做的两件事：
 #   1. 仓库 Settings → Pages → Build and deployment → Source 选择 "GitHub Actions"
-#   2. 推送到 main 分支，这个工作流就会自动发布
+#   2. 推送到 main 分支（或手动 Run workflow）
 #
-# 站点地址：https://<你的用户名>.github.io/<仓库名>/
-# 如果仓库名是 <用户名>.github.io，则地址是 https://<用户名>.github.io/
+# 站点地址：https://imcez.github.io/myweb/
 
 name: Deploy to GitHub Pages
 
@@ -34,6 +33,42 @@ jobs:
     steps:
       - name: 检出仓库
         uses: actions/checkout@v4
+
+      # ----------------------------------------------------------------------
+      # 安全步骤：确保 admin.html 绝对不会被发布出去
+      #
+      # admin.html 是本地创作工具：
+      #   - 访问口令是纯前端的，任何人查看网页源码都能读到
+      #   - 带有读取/写入本地文件的能力
+      # 它绝不能出现在公网。
+      #
+      # 它已在 .gitignore 中，理论上 checkout 时不会被带进来；
+      # 但 upload-pages-artifact 底层是 tar 打包目录，不读 .gitignore，
+      # 所以这里再做一次显式删除，把"理论安全"变成"确定安全"。
+      # ----------------------------------------------------------------------
+      - name: 安全清理（移除 admin.html 等不该发布的文件）
+        run: |
+          echo "== 发布前安全清理 =="
+          for f in admin.html tools .gitignore .vercelignore vercel.json; do
+            if [ -e "$f" ]; then
+              rm -rf "$f"
+              echo "  已移除: $f"
+            fi
+          done
+
+          # 双保险：如果 admin.html 还在，直接让构建失败，绝不带病发布
+          if [ -e admin.html ]; then
+            echo "::error::检测到 admin.html 仍存在，已中止发布以免后台泄露"
+            exit 1
+          fi
+
+          echo "== 本次将发布的顶层内容 =="
+          ls -A
+          echo "== 确认关键入口文件存在 =="
+          for f in index.html projects.html project.html about.html 404.html .nojekyll; do
+            [ -e "$f" ] || { echo "::error::缺少 $f"; exit 1; }
+          done
+          echo "  入口文件齐全 ✔"
 
       - name: 配置 Pages
         uses: actions/configure-pages@v5
